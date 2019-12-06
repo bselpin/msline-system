@@ -1,0 +1,67 @@
+@import 'Variable.scss';
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap');
+@import url('https://d24uop4wk69tt0.cloudfront.net/css/SpoqaHanSans-kr.css');
+
+::selection {
+  background: rgba(30,30,30,0.85);
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0.4rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $main;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1649f0;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  cursor: none;
+  text-decoration: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  cursor: none;
+  background: none;
+  outline: none;
+  border: none;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  font-size: calc(16px + 0.5vw);
+  overflow-x: hidden;
+  cursor: none;
+  user-select: none;
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Titillium Web', 'Spoqa Han Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}

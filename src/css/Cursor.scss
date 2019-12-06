@@ -1,0 +1,69 @@
+@import 'Variable.scss';
+
+.cursor {
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    border: 1px solid $main;
+    border-radius: 50%;
+    -webkit-transform: translateX(-10rem) translateZ(0);
+    transform: translateX(-10rem) translateZ(0);
+    background: transparent;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+
+    &.hover {
+        &:after {
+            transform: scale(2.25);
+            animation: hovering 1.5s infinite;
+        }
+    }
+
+    &.dark {
+        mix-blend-mode: screen;
+        border: 1px solid #fff;
+
+        &:after {
+            background: #fff;
+            transform: scale(2.25);
+        }
+    }
+
+    &.expand {
+        &:after {
+            opacity: 1;
+            transform: scale(0.1) !important;
+        }
+    }
+
+    &:after {
+        content: '';
+        width: 36px;
+        height: 36px;
+        position: absolute;
+        transition: all 0.05s ease-out;
+        border-radius: 50%;
+        background: $main;
+        top: 5.5px;
+        left: 5.5px;
+        opacity: 0.3;
+        mix-blend-mode: hue;
+    }
+}
+
+@keyframes hovering {
+    0% {
+        transform: scale(1.8);
+    }
+
+    50% {
+        transform: scale(2.2);
+    }
+
+    100% {
+        transform: scale(1.8);
+    }
+}
