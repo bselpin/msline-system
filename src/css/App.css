@@ -1,3 +1,11 @@
+h1 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
 .wrapper {
   width: 100vw;
   height: 100vh;
@@ -57,9 +65,39 @@
   -webkit-animation: mainsAnim 0.85s ease-out forwards;
 }
 
-nav {
-  position: relative;
-  z-index: 999;
+#nav {
+  position: fixed;
+  z-index: 99999;
+  top: 0;
+  width: 100%;
+}
+
+#nav ul {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#nav ul li {
+  padding: 0.9rem 0;
+}
+
+#nav ul a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  -webkit-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+  font-size: 0.9rem;
+}
+
+#nav ul a:hover {
+  color: #2cb4ad;
 }
 
 .main-back-sub {
