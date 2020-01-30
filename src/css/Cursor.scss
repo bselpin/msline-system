@@ -15,10 +15,6 @@
     pointer-events: none;
     mix-blend-mode: multiply;
 
-    &.map {
-        display: none;
-    }
-
     &.hover {
         &:after {
             transform: scale(2.25);

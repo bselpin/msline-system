@@ -1,27 +1,14 @@
 import React from 'react';
 import logo from './img/logo.svg';
 import './css/App.scss';
-import "./css/animate.min.css";
+import "animate.css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 import Cursor from './Cursor';
 import Contact from './Contact';
 import Location from './Location';
-import Project from './Project';
+import NavBar from 'react-scrolling-nav'
 
 class App extends React.Component {  
-  constructor(props) {
-    super(props);
-    this.about = null
-    this.project = null 
-    this.contact = null 
-    this.location = null
-    this.handleAbout = this.handleAbout.bind(this);
-    this.handleProject = this.handleProject.bind(this);
-    this.handleContact = this.handleContact.bind(this);
-    this.handleLocation = this.handleLocation.bind(this);
-    console.log(this.about)
-  }
-  
   state = {
     black: false,
     blue: false,
@@ -64,49 +51,38 @@ class App extends React.Component {
     }, 4500); 
   }
 
-  handleAbout(e) {
-    e.preventDefault();
-    this.about.scrollIntoView({ behavior: "smooth", block: "start" });
-    console.log(this.about)
-  }
-
-  handleProject(e) {
-    e.preventDefault();
-    this.project.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  handleContact(e) {
-    e.preventDefault();
-    this.contact.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
-  handleLocation(e) {
-    e.preventDefault();
-    this.location.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
-
   componentDidMount() {
     this.changeStates()
-    this.about = document.getElementById('about')
-    this.project = document.getElementById('project')
-    this.contact = document.getElementById('contact')
-    this.location = document.getElementById('location')
   }
 
-  render() {
+  render() {    
     let status = this.state;
+
+    const navbarItems = [
+      {
+        label: "about",
+        target: "about"
+      },
+      {
+        label: "project",
+        target: "project"
+      },
+      {
+        label: "contact",
+        target: "contact"
+      },
+      {
+        label: "location",
+        target: "location"
+      }
+    ]
 
     return (
     <>
     <div className={`wrapper ${status.isLoading ? "over" : ""}`}>
       <div className="App">
-        <nav id="nav" className={`${status.mains ? "active" : ""}`}>
-          <ul>
-            <li><a href={'#' + this.about} onClick={this.handleAbout} className="tag">about</a></li>
-            <li><a href={'#' + this.project} onClick={this.handleProject} className="tag">project</a></li>
-            <li><a href={'#' + this.contact} onClick={this.handleContact} className="tag">contact</a></li>
-            <li><a href={'#' + this.location} onClick={this.handleLocation} className="tag">company</a></li>
-          </ul>
+        <nav className={`${status.mains ? "active" : ""}`}>
+          <NavBar items={navbarItems} offset={0} duration={800} delay={0} id="nav" ></NavBar>
         </nav>
 
         <header className="App-header">         
@@ -176,7 +152,7 @@ class App extends React.Component {
                 <h1>블록체인의 뭐시기</h1>
                 <h3>블록체인 톺아보기</h3>
             </div>
-            <div className="main-back-sub">
+            <div className="main-back-sub">                
             </div>        
            
           </div>
@@ -185,22 +161,44 @@ class App extends React.Component {
       </div>
 
       <Cursor />
+
+      
     
-      <div className="App apps">
+        <div className="App apps">
 
-          <div id="about" className="App-header about">
-                          
-          </div>
+            <header className="App-header about">
+              
+            </header>
 
-      </div>      
+        </div>
+      
 
-      <Project />
+      <div className="App apps project">
 
-      <Contact />
+            <header className="App-header apps">
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
+          </p>
+            <a
+              className="App-link tag"
+              href="https://reactjs.org"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn React
+          </a>
+          </header>
 
-      <Location />
+      </div>
 
-    </div>      
+        <Contact />
+
+
+
+        <Location />
+
+    </div>
+      
     </>
   );
   }
