@@ -20,6 +20,7 @@ label {
 
 .contact-wrap h1 {
   color: #fff;
+  font-size: 3rem;
   padding-bottom: 1rem;
   position: relative;
 }
@@ -28,8 +29,8 @@ label {
   position: absolute;
   content: "";
   display: block;
-  width: 1.5rem;
-  height: 0.3rem;
+  width: 2rem;
+  height: 0.5rem;
   right: 0;
   bottom: 50%;
   background: #fff;
@@ -150,7 +151,7 @@ label {
   font-weight: 500;
   font-family: inherit;
   position: absolute;
-  bottom: calc(1px - 3rem);
+  bottom: -3rem;
   width: 25%;
   height: 3rem;
   right: 0;
@@ -163,103 +164,14 @@ label {
   cursor: none;
   -webkit-transition: all 0.25s ease-out;
   transition: all 0.25s ease-out;
-  border-radius: 0;
-  -webkit-animation: construct 0.5s ease-out forwards;
-          animation: construct 0.5s ease-out forwards;
-}
-
-.submit-btn.success {
-  -webkit-animation: success 1.75s ease-in-out;
-          animation: success 1.75s ease-in-out;
 }
 
 .submit-btn:active, .submit-btn:hover {
   outline: none;
   border-color: #fff;
-  background: rgba(255, 255, 255, 0.15);
 }
 
 .submit-btn:active {
   background: rgba(255, 255, 255, 0.25);
-}
-
-@-webkit-keyframes success {
-  20% {
-    -webkit-transform: translateX(-5rem) translateY(-1rem);
-            transform: translateX(-5rem) translateY(-1rem);
-    width: 1rem;
-    height: 1rem;
-    background: #fff;
-    border-radius: 0;
-  }
-  30% {
-    border-radius: 50%;
-  }
-  45% {
-    width: 1rem;
-    -webkit-transform: translateX(-5rem) translateY(-1rem);
-            transform: translateX(-5rem) translateY(-1rem);
-  }
-  70% {
-    border-radius: 50% 20px 20px 50%;
-    width: 5rem;
-  }
-  100% {
-    border-radius: 50%;
-    width: 10rem;
-    height: 1rem;
-    background: #fff;
-    -webkit-transform: translateX(50vw) translateY(-1rem);
-            transform: translateX(50vw) translateY(-1rem);
-  }
-}
-
-@keyframes success {
-  20% {
-    -webkit-transform: translateX(-5rem) translateY(-1rem);
-            transform: translateX(-5rem) translateY(-1rem);
-    width: 1rem;
-    height: 1rem;
-    background: #fff;
-    border-radius: 0;
-  }
-  30% {
-    border-radius: 50%;
-  }
-  45% {
-    width: 1rem;
-    -webkit-transform: translateX(-5rem) translateY(-1rem);
-            transform: translateX(-5rem) translateY(-1rem);
-  }
-  70% {
-    border-radius: 50% 20px 20px 50%;
-    width: 5rem;
-  }
-  100% {
-    border-radius: 50%;
-    width: 10rem;
-    height: 1rem;
-    background: #fff;
-    -webkit-transform: translateX(50vw) translateY(-1rem);
-            transform: translateX(50vw) translateY(-1rem);
-  }
-}
-
-@-webkit-keyframes construct {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes construct {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 /*# sourceMappingURL=Contact.css.map */

@@ -14,10 +14,6 @@
   mix-blend-mode: multiply;
 }
 
-.cursor.map {
-  display: none;
-}
-
 .cursor.hover:after {
   -webkit-transform: scale(2.25);
           transform: scale(2.25);
