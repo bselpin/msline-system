@@ -1,0 +1,182 @@
+diff a/src/App.js b/src/App.js	(rejected hunks)
+@@ -1,30 +1,17 @@
+ import React from 'react';
+ import logo from './img/logo.svg';
+ import './css/App.scss';
+-import "./css/animate.min.css";
++import "animate.css/animate.min.css";
+ import ScrollAnimation from 'react-animate-on-scroll';
+ import Cursor from './Cursor';
+ import Contact from './Contact';
+ import Location from './Location';
+-import Project from './Project';
++import NavBar from 'react-scrolling-nav'
+ 
+ class App extends React.Component {  
+-  constructor(props) {
+-    super(props);
+-    this.about = null
+-    this.project = null 
+-    this.contact = null 
+-    this.location = null
+-    this.handleAbout = this.handleAbout.bind(this);
+-    this.handleProject = this.handleProject.bind(this);
+-    this.handleContact = this.handleContact.bind(this);
+-    this.handleLocation = this.handleLocation.bind(this);
+-    console.log(this.about)
+-  }
+-  
+   state = {
+     black: false,
+     blue: false,
+     upper: false,
+     lower: false,
+     logov: false,
+@@ -61,55 +48,44 @@
+ 
+     setTimeout(() => {
+       this.setState({mains : true})
+     }, 4500); 
+   }
+ 
+-  handleAbout(e) {
+-    e.preventDefault();
+-    this.about.scrollIntoView({ behavior: "smooth", block: "start" });
+-    console.log(this.about)
+-  }
+-
+-  handleProject(e) {
+-    e.preventDefault();
+-    this.project.scrollIntoView({ behavior: "smooth", block: "start" });
+-  }
+-
+-  handleContact(e) {
+-    e.preventDefault();
+-    this.contact.scrollIntoView({ behavior: "smooth", block: "start" });
+-  }
+-
+-  handleLocation(e) {
+-    e.preventDefault();
+-    this.location.scrollIntoView({ behavior: "smooth", block: "start" });
+-  }
+-
+   componentDidMount() {
+     this.changeStates()
+-    this.about = document.getElementById('about')
+-    this.project = document.getElementById('project')
+-    this.contact = document.getElementById('contact')
+-    this.location = document.getElementById('location')
+   }
+ 
+-  render() {
++  render() {    
+     let status = this.state;
+ 
++    const navbarItems = [
++      {
++        label: "about",
++        target: "about"
++      },
++      {
++        label: "project",
++        target: "project"
++      },
++      {
++        label: "contact",
++        target: "contact"
++      },
++      {
++        label: "location",
++        target: "location"
++      }
++    ]
++
+     return (
+     <>
+     <div className={`wrapper ${status.isLoading ? "over" : ""}`}>
+       <div className="App">
+-        <nav id="nav" className={`${status.mains ? "active" : ""}`}>
+-          <ul>
+-            <li><a href={'#' + this.about} onClick={this.handleAbout} className="tag">about</a></li>
+-            <li><a href={'#' + this.project} onClick={this.handleProject} className="tag">project</a></li>
+-            <li><a href={'#' + this.contact} onClick={this.handleContact} className="tag">contact</a></li>
+-            <li><a href={'#' + this.location} onClick={this.handleLocation} className="tag">company</a></li>
+-          </ul>
++        <nav className={`${status.mains ? "active" : ""}`}>
++          <NavBar items={navbarItems} offset={0} duration={800} delay={0} id="nav" ></NavBar>
+         </nav>
+ 
+         <header className="App-header">         
+           <div className={`logo-wrap ${status.logov ? "active" : ""}`} >
+             <svg id="logoLayer" x="0px" y="0px" viewBox="0 0 450 160" src="false">
+             <path className={`chain-black black ${status.black ? "active" : ""}`} d="M40.1,86.5l4.8-8.3H49c3.3,0,5.8-2.5,5.8-5.8V46.6c0-3.3-2.5-5.8-5.8-5.8H39c-3.3,0-5.8,2.5-5.8,5.8v11
+@@ -173,37 +149,59 @@
+ 
+           <div className={`mains ${status.mains ? "active" : ""}`}>
+             <div className="main-back">
+                 <h1>블록체인의 뭐시기</h1>
+                 <h3>블록체인 톺아보기</h3>
+             </div>
+-            <div className="main-back-sub">
++            <div className="main-back-sub">                
+             </div>        
+            
+           </div>
+           
+         </header>
+       </div>
+ 
+       <Cursor />
++
++      
+     
+-      <div className="App apps">
++        <div className="App apps">
++
++            <header className="App-header about">
++              
++            </header>
++
++        </div>
++      
++
++      <div className="App apps project">
++
++            <header className="App-header apps">
++            <p>
++              Edit <code>src/App.js</code> and save to reload.
++          </p>
++            <a
++              className="App-link tag"
++              href="https://reactjs.org"
++              target="_blank"
++              rel="noopener noreferrer"
++            >
++              Learn React
++          </a>
++          </header>
+ 
+-          <div id="about" className="App-header about">
+-                          
+-          </div>
++      </div>
+ 
+-      </div>      
++        <Contact />
+ 
+-      <Project />
+ 
+-      <Contact />
+ 
+-      <Location />
++        <Location />
+ 
+-    </div>      
++    </div>
++      
+     </>
+   );
+   }
+ }
+ 
+ export default App;

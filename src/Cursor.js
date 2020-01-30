@@ -29,13 +29,13 @@ setTimeout(() => {
             "style", `transform: translate3d(${e.clientX - 20}px, ${e.clientY - 20}px, -10px);`)
     })
 
-    document.addEventListener('mousedown', () => {
-        cursor.classList.add('expand')
-    })
+    // document.addEventListener('mousedown', () => {
+    //     cursor.classList.add('expand')
+    // })
 
-    document.addEventListener('mouseup', () => {
-        cursor.classList.remove('expand')
-    })
+    // document.addEventListener('mouseup', () => {
+    //     cursor.classList.remove('expand')
+    // })
 }, 10);
 
 function Cursor() {

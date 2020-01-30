@@ -31,14 +31,12 @@
 }
 
 a {
-  cursor: none;
   text-decoration: none;
   color: inherit;
 }
 
 input,
 textarea {
-  cursor: none;
   background: none;
   outline: none;
   border: none;
@@ -49,7 +47,6 @@ html {
   height: 100vh;
   font-size: calc(16px + 0.5vw);
   overflow-x: hidden;
-  cursor: none;
   user-select: none;
 }
 
@@ -59,9 +56,4 @@ body {
   font-family: 'Titillium Web', 'Spoqa Han Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }

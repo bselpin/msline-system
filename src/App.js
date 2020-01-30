@@ -1,14 +1,33 @@
 import React from 'react';
 import logo from './img/logo.svg';
 import './css/App.scss';
-import "animate.css/animate.min.css";
+import "./css/animate.css";
 import ScrollAnimation from 'react-animate-on-scroll';
-import Cursor from './Cursor';
 import Contact from './Contact';
+import Project from './Project';
 import Location from './Location';
-import NavBar from 'react-scrolling-nav'
+import MainSlider from './MainSlider';
+import Cards from './Cards';
+import About01 from './img/about01.svg';
+import About02 from './img/about02.svg';
+import About03 from './img/about03.svg';
+import About04 from './img/about04.svg';
+import About05 from './img/about05.svg';
 
-class App extends React.Component {  
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.about = null
+    this.project = null
+    this.contact = null
+    this.location = null
+    this.handleAbout = this.handleAbout.bind(this);
+    this.handleProject = this.handleProject.bind(this);
+    this.handleContact = this.handleContact.bind(this);
+    this.handleLocation = this.handleLocation.bind(this);
+    console.log(this.about)
+  }
+
   state = {
     black: false,
     blue: false,
@@ -18,6 +37,63 @@ class App extends React.Component {
     logot: false,
     mains: false,
     isLoading: true,
+    cards: [
+      {
+        svg: About01,
+        titleKR: '웹솔루션 개발',
+        titleEN: 'Web Application',
+        list: [
+          '기업 홈페이지 및 업무용 웹 APP 제작',
+          '웹 크롤링 및 HTML 파싱',
+          '다양한 OS, 플랫폼에서의 웹서버 구축',
+          '강력한 성능의 WAS'
+        ]
+      },
+      {
+        svg: About02,
+        titleKR: '가상화폐 생태계 구축 및 솔루션',
+        titleEN: 'Crypto Currency Solution',
+        list: [
+          '가상화폐 거래,교환소 개발',
+          '가상화폐 P2P 거래소 개발',
+          '가상화폐 PAY 솔루션 개발',
+          '외부 연동 API 모듈 개발'
+        ]
+      },
+      {
+        svg: About03,
+        titleKR: '블록체인 기반 기술 구현',
+        titleEN: 'Blockchain Core Implementation',
+        list: [
+          '블록체인 노드 구축',
+          '윈도우 및 모바일 전자지갑 개발',
+          '블록체인 기반 확장 APP개발'
+        ]
+      },
+      {
+        svg: About04,
+        titleKR: '기업 자원관리 시스템',
+        titleEN: 'ERP',
+        list: [
+          '경영정보 시스템 – 인사, 회계, 재고 관리',
+          '생산공정 시스템 – 원자재 BOM, 공정률',
+          '고객관리 시스템 – SCM, 거래처 관리',
+          '그 외 다양한 사무 자동화 시스템'
+        ]
+      },
+      {
+        svg: About05,
+        titleKR: '모바일 솔루션',
+        titleEN: 'Mobile Platform',
+        list: [
+          'Social Commerce',
+          'SNS – Social Network Service',
+          '각종 Community 플랫폼',
+          'Live Chat 플랫폼',
+          '전문 마켓 플랫폼'
+        ]
+      },
+    ]
   }
 
   changeStates() {
@@ -51,38 +127,49 @@ class App extends React.Component {
     }, 4500); 
   }
 
+  handleAbout(e) {
+    e.preventDefault();
+    this.about.scrollIntoView({ behavior: "smooth", block: "start" });
+    console.log(this.about)
+  }
+
+  handleProject(e) {
+    e.preventDefault();
+    this.project.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  handleContact(e) {
+    e.preventDefault();
+    this.contact.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  handleLocation(e) {
+    e.preventDefault();
+    this.location.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
   componentDidMount() {
     this.changeStates()
+    this.about = document.getElementById('about')
+    this.project = document.getElementById('project')
+    this.contact = document.getElementById('contact')
+    this.location = document.getElementById('location')
   }
 
   render() {    
     let status = this.state;
 
-    const navbarItems = [
-      {
-        label: "about",
-        target: "about"
-      },
-      {
-        label: "project",
-        target: "project"
-      },
-      {
-        label: "contact",
-        target: "contact"
-      },
-      {
-        label: "location",
-        target: "location"
-      }
-    ]
-
     return (
     <>
     <div className={`wrapper ${status.isLoading ? "over" : ""}`}>
       <div className="App">
-        <nav className={`${status.mains ? "active" : ""}`}>
-          <NavBar items={navbarItems} offset={0} duration={800} delay={0} id="nav" ></NavBar>
+        <nav id="nav" className={`${status.mains ? "active" : ""}`}>
+          <ul>
+            <li><a href={'#' + this.about} onClick={this.handleAbout} className="tag">about</a></li>
+            <li><a href={'#' + this.project} onClick={this.handleProject} className="tag">project</a></li>
+            <li><a href={'#' + this.contact} onClick={this.handleContact} className="tag">contact</a></li>
+            <li><a href={'#' + this.location} onClick={this.handleLocation} className="tag">company</a></li>
+          </ul>
         </nav>
 
         <header className="App-header">         
@@ -148,57 +235,30 @@ class App extends React.Component {
           <img src={logo} className={`logot ${status.logot ? "active" : ""}`} alt="logo" />
 
           <div className={`mains ${status.mains ? "active" : ""}`}>
-            <div className="main-back">
-                <h1>블록체인의 뭐시기</h1>
-                <h3>블록체인 톺아보기</h3>
-            </div>
-            <div className="main-back-sub">                
+            <MainSlider />
+            <div className="main-back-sub">
             </div>        
            
           </div>
           
         </header>
       </div>
-
-      <Cursor />
-
-      
     
-        <div className="App apps">
+      <div className="App apps">
 
-            <header className="App-header about">
-              
-            </header>
+          <div id="about" className="App-header about">
+             <Cards props={status.cards}/>
+          </div>
 
-        </div>
-      
+      </div>      
 
-      <div className="App apps project">
+      <Project />
 
-            <header className="App-header apps">
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-          </p>
-            <a
-              className="App-link tag"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-          </a>
-          </header>
+      <Contact />
 
-      </div>
+      <Location />
 
-        <Contact />
-
-
-
-        <Location />
-
-    </div>
-      
+    </div>      
     </>
   );
   }

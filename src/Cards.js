@@ -4,6 +4,7 @@ import "./css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const Cards = ({props}) => {
+    console.log(props)
     return (
         <>
         <ScrollAnimation animateIn="fadeInUp"> 

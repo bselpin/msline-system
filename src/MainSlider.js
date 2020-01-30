@@ -10,7 +10,8 @@ class MainSlider extends React.Component {
             dots: true,
             dotClass: "slider-dots",
             autoplaySpeed: 5000,
-            duration: 300
+            duration: 300,
+            swipe: false,
         }
 
         return (
