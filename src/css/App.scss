@@ -1,5 +1,14 @@
 @import 'Variable.scss';
 
+h1 {
+    font-size: 2.2rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
 .wrapper {
     width: 100vw;
     height: 100vh;
@@ -9,6 +18,11 @@
         height: auto;
         overflow-y: scroll;
     }
+}
+
+div:active, div:focus {
+    outline: none !important;
+    border: none !important;
 }
 
 .logot {
@@ -50,9 +64,34 @@
     }
 }
 
-nav {
-    position: relative;
-    z-index: 999;
+#nav {
+    position: fixed;
+    z-index: 99999;
+    top: 0;
+    width: 100%;
+
+    ul {
+        width: 100%;
+        display: flex;
+        list-style-type: none;
+        justify-content: center;
+
+        li {
+            padding: 0.9rem 0;
+        }
+
+        a {
+            display: block;
+            padding: 0.5rem 1rem;
+            font-weight: 700;
+            transition: all 0.2s ease-out;
+            font-size: 0.9rem;
+
+            &:hover {
+                color: $sub2;
+            }
+        }
+    }
 }
 
 .main-back-sub {
@@ -70,7 +109,7 @@ nav {
     width: 100vw;
     height: 100vh;
     position: absolute;
-    z-index: -1;
+    z-index: 1;
     top: 0;
     left: 0;
     background: url('../img/block-b.png') right top no-repeat;
@@ -95,7 +134,75 @@ nav {
     }
 }
 
+.main-slider {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
 
+    .carousel-initialized {
+        width: 100%;
+        height: 100vh;
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: flex;
+    }
+
+    .carousel-row {
+        width: 100%;
+        height: 100vh !important;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        div:active {
+            outline: none;
+            border: none;
+        }
+    }
+
+    .carousel-dots {
+        position: absolute;
+        bottom: 10rem;
+        z-index: 999;
+    }
+
+    li.carousel-dots-active {
+        button:before {
+            color: $main2 !important;
+            opacity: 1;
+        }   
+        
+        
+    }
+
+    .carousel-arrow {
+        &.carousel-next {
+            right: 5rem;
+
+            &:before {
+                background-image: url(../img/right-arrow.svg);
+                width: 100px;
+                height: 160px;
+            }
+        }
+
+        &.carousel-prev {
+            left: 5rem;
+
+            &:before {
+                background-image: url(../img/left-arrow.svg);
+                width: 100px;
+                height: 160px;
+            }
+        }
+
+
+    }
+}
 
 .logo-wrap {
     &.active {
