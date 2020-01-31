@@ -6,7 +6,7 @@ class MainSlider extends React.Component {
     render() {
         const settings = {
             className: "main-slider",
-            autoplay: true,
+            autoplay: false,
             dots: true,
             dotClass: "slider-dots",
             autoplaySpeed: 5000,

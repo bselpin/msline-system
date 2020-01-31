@@ -73,8 +73,9 @@ class Location extends React.Component {
                 <footer className="footer">
                     <ScrollAnimation animateIn="fadeIn">
                         <img src={logoblue} alt="" className="logo-blue" />
-                        <p>(주)엠에스라인 시스템</p>
-                        <p>서울시 송파구 법원로 114, 엠스테이트빌딩 A동 604호</p>
+                        <p>(주)엠에스라인 시스템</p>                        
+                        <p>서울시 강남구 압구정로 79길 41 2층</p>
+                        <p><span className="label">CEO</span> 조광호</p>
                         <p>
                             <span className="label">T</span><span>02  540  2621</span>
                         </p>

@@ -1,5 +1,64 @@
 @import 'Variable.scss';
 
+.hyper {
+    height: 30rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    position: relative;
+    z-index: 10;
+    
+    .left, .right {
+        width: 50%;
+        height: 30rem;        
+    }
+
+    .left {
+        text-align: left;
+
+        .wrapper {
+            word-break: keep-all;
+            width: 100%;
+            color: #fff;
+            background: $main;
+            padding: 4rem 3rem 3rem 18vw;
+        }
+
+        h1, p {
+            text-align: left;
+            width: 100%;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        p {
+            font-size: 0.75rem;
+            font-weight: 400;
+            margin-top: 0.5rem;
+        }
+
+        img {
+            width: 5.5rem;
+            margin-top: 4rem;
+            display: inline-block;
+
+            &.ex {
+                margin-left: 1.5rem;
+            }
+        }
+    }
+
+    .right {
+        background: url('../img/hyper.jpg') -25% bottom no-repeat;
+        background-size: 125%;
+    }
+}
+
 .cards {
     width: 100%;
     min-height: 100vh;
@@ -8,11 +67,14 @@
     justify-content: space-evenly;
     align-items: center;
     flex-direction: row;
-    padding: 0 calc(300px + 2vw);
+    padding: 0 calc(200px + 2vw);
     margin-bottom: 8rem;
+    margin-top: -3rem;
+    position: relative;
+    z-index: 15;
 
     .card {
-        width: 24.5%;
+        width: 25%;
         min-width: 250px;
         text-align: center;
         margin: 0 2rem;
@@ -25,6 +87,7 @@
         height: 15.5rem;
         margin-top: 2rem;
         transition: all 0.2s;
+        letter-spacing: -1px;
 
         &:hover {
             transform: translate(-0.25rem, -0.25rem);
@@ -33,15 +96,15 @@
 
         &.card03,
         &.card04 {
-            width: 27%;
+            width: 26%;
             height: 17rem;
-            margin-top: 3rem;
-            margin-left: -3.5rem;
-            margin-right: -3.5rem;
+            margin-top: 4rem;
+            margin-left: -6rem;
+            margin-right: -6rem;
         }
 
         img {
-            width: 75%;
+            width: 4rem;
             min-width: 150px;
         }
 
@@ -51,10 +114,11 @@
 
         h3 {
             color: $main2;
-            font-size: 0.65rem;
-            font-weight: 300;
+            font-size: 0.6rem;
+            font-weight: 700;
             margin: 0;
             margin-bottom: 0.5rem;
+            letter-spacing: 0px;
         }
 
         p {

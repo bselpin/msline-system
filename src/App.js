@@ -8,11 +8,6 @@ import Project from './Project';
 import Location from './Location';
 import MainSlider from './MainSlider';
 import Cards from './Cards';
-import About01 from './img/about01.svg';
-import About02 from './img/about02.svg';
-import About03 from './img/about03.svg';
-import About04 from './img/about04.svg';
-import About05 from './img/about05.svg';
 
 class App extends React.Component {
   constructor(props) {
@@ -25,7 +20,6 @@ class App extends React.Component {
     this.handleProject = this.handleProject.bind(this);
     this.handleContact = this.handleContact.bind(this);
     this.handleLocation = this.handleLocation.bind(this);
-    console.log(this.about)
   }
 
   state = {
@@ -36,64 +30,7 @@ class App extends React.Component {
     logov: false,
     logot: false,
     mains: false,
-    isLoading: true,
-    cards: [
-      {
-        svg: About01,
-        titleKR: '웹솔루션 개발',
-        titleEN: 'Web Application',
-        list: [
-          '기업 홈페이지 및 업무용 웹 APP 제작',
-          '웹 크롤링 및 HTML 파싱',
-          '다양한 OS, 플랫폼에서의 웹서버 구축',
-          '강력한 성능의 WAS'
-        ]
-      },
-      {
-        svg: About02,
-        titleKR: '가상화폐 생태계 구축 및 솔루션',
-        titleEN: 'Crypto Currency Solution',
-        list: [
-          '가상화폐 거래,교환소 개발',
-          '가상화폐 P2P 거래소 개발',
-          '가상화폐 PAY 솔루션 개발',
-          '외부 연동 API 모듈 개발'
-        ]
-      },
-      {
-        svg: About03,
-        titleKR: '블록체인 기반 기술 구현',
-        titleEN: 'Blockchain Core Implementation',
-        list: [
-          '블록체인 노드 구축',
-          '윈도우 및 모바일 전자지갑 개발',
-          '블록체인 기반 확장 APP개발'
-        ]
-      },
-      {
-        svg: About04,
-        titleKR: '기업 자원관리 시스템',
-        titleEN: 'ERP',
-        list: [
-          '경영정보 시스템 – 인사, 회계, 재고 관리',
-          '생산공정 시스템 – 원자재 BOM, 공정률',
-          '고객관리 시스템 – SCM, 거래처 관리',
-          '그 외 다양한 사무 자동화 시스템'
-        ]
-      },
-      {
-        svg: About05,
-        titleKR: '모바일 솔루션',
-        titleEN: 'Mobile Platform',
-        list: [
-          'Social Commerce',
-          'SNS – Social Network Service',
-          '각종 Community 플랫폼',
-          'Live Chat 플랫폼',
-          '전문 마켓 플랫폼'
-        ]
-      },
-    ]
+    isLoading: true
   }
 
   changeStates() {
@@ -130,7 +67,6 @@ class App extends React.Component {
   handleAbout(e) {
     e.preventDefault();
     this.about.scrollIntoView({ behavior: "smooth", block: "start" });
-    console.log(this.about)
   }
 
   handleProject(e) {
@@ -160,7 +96,6 @@ class App extends React.Component {
     let status = this.state;
 
     return (
-    <>
     <div className={`wrapper ${status.isLoading ? "over" : ""}`}>
       <div className="App">
         <nav id="nav" className={`${status.mains ? "active" : ""}`}>
@@ -259,7 +194,6 @@ class App extends React.Component {
       <Location />
 
     </div>      
-    </>
   );
   }
 }

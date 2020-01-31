@@ -8,7 +8,10 @@ class Project extends React.Component {
         return (
             <>
             <div id="project" className="project">
-                
+                <div className="wrapper">
+                    <h1>Project</h1>
+                    
+                </div> 
             </div>
             </>
         )

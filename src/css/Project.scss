@@ -1,2 +1,11 @@
 @import 'Variable.scss';
 
+#project {
+    padding-top: 3rem;
+    .wrapper {
+        h1 {
+            width: 100%;
+            text-align: center;
+        }
+    }
+}
