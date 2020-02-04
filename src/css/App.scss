@@ -16,7 +16,7 @@ h3 {
 
     &.over {
         height: auto;
-        overflow-y: scroll;
+        overflow-y: auto;
     }
 }
 
@@ -98,12 +98,12 @@ div:active, div:focus {
 
 .main-back-sub {
     width: 100vw;
-    height: 120vh;
+    height: 100vh;
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
-    background: url('../img/block-sub.png') -1% 100% no-repeat;
+    background: url('../img/block-sub.png') -1% 200% no-repeat;
     background-size: calc(150px + 40vw);
 }
 

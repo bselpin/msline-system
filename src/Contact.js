@@ -1,7 +1,7 @@
 import React from 'react';
 import './css/Contact.scss';
 import axios from 'axios'
-import "./css/animate.css";
+import "./css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 
 const handleSubmit = (e) => {
@@ -69,7 +69,7 @@ const Contact = () => {
                             <label htmlFor="url">참고 사이트가 있으신가요?</label>
                         </div>
                         <div className="input-div input-textarea">
-                            <textarea id="textarea" name="textarea" className="tag dark" id="textarea" cols="30" rows="5" placeholder="문의 내용" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" required></textarea>
+                            <textarea id="textarea" name="textarea" className="tag dark" cols="30" rows="5" placeholder="문의 내용" autoComplete="off" autoCorrect="off" autoCapitalize="off" spellCheck="false" required></textarea>
                             <label htmlFor="textarea">문의 내용을 적어주세요</label>
                         </div>
                         <button id="submit-btn" className="submit-btn tag dark" onClick={successSend}>보내기</button>

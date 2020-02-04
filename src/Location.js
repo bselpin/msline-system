@@ -1,7 +1,7 @@
 /*global kakao*/
 import React from 'react'
 import './css/Location.scss';
-import "./css/animate.css";
+import "./css/animate.min.css";
 import ScrollAnimation from 'react-animate-on-scroll';
 import logoblue from './img/logo-blue.svg'
 

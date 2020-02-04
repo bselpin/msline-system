@@ -1,8 +1,6 @@
 import React from 'react';
 import logo from './img/logo.svg';
 import './css/App.scss';
-import "./css/animate.css";
-import ScrollAnimation from 'react-animate-on-scroll';
 import Contact from './Contact';
 import Project from './Project';
 import Location from './Location';
@@ -30,7 +28,8 @@ class App extends React.Component {
     logov: false,
     logot: false,
     mains: false,
-    isLoading: true
+    isLoading: false
+
   }
 
   changeStates() {
@@ -96,7 +95,7 @@ class App extends React.Component {
     let status = this.state;
 
     return (
-    <div className={`wrapper ${status.isLoading ? "over" : ""}`}>
+    <div className={`wrapper main-wrapper ${status.isLoading ? "over" : ""}`}>
       <div className="App">
         <nav id="nav" className={`${status.mains ? "active" : ""}`}>
           <ul>

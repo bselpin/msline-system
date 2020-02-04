@@ -28,7 +28,7 @@ const Cards = () => {
             titleKR: '가상화폐 생태계 구축 및 솔루션',
             titleEN: 'Crypto Currency Solution',
             list: [
-                '가상화폐 거래,교환소 개발',
+                '가상화폐 거래, 교환소 개발',
                 '가상화폐 P2P 거래소 개발',
                 '가상화폐 PAY 솔루션 개발',
                 '외부 연동 API 모듈 개발'
@@ -88,18 +88,18 @@ const Cards = () => {
             <ScrollAnimation animateIn="fadeInUp" className="right"> 
             </ScrollAnimation>
         </div>  
-        <ScrollAnimation animateIn="fadeInUp" className="cards">                    
+        <div className="cards">                    
         {arr.map((arr, idx) => {
             return (
-                <div className={`card card0${idx}`} key={idx}>
-                <img src={arr.svg} alt={"about"+idx} />
-                <h2>{arr.titleKR}</h2>
-                <h3>{arr.titleEN}</h3>
-                {arr.list.map((list, idx) => <p key={idx}>{list}</p>)} 
-                </div> 
+                <ScrollAnimation animateIn="fadeIn" className={`card card0${idx}`} key={idx}>
+                    <img src={arr.svg} alt={"about"+idx} />
+                    <h2>{arr.titleKR}</h2>
+                    <h3>{arr.titleEN}</h3>
+                    {arr.list.map((list, idx) => <p key={idx}>{list}</p>)} 
+                </ScrollAnimation> 
             )
         })}   
-        </ScrollAnimation>
+        </div>
         </>
     )
 }

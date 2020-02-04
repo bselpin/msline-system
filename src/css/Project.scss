@@ -2,10 +2,103 @@
 
 #project {
     padding-top: 3rem;
+
     .wrapper {
+        height: auto;
+        text-align: center;
+
         h1 {
             width: 100%;
             text-align: center;
+        }
+
+        h3 {
+            color: #fff;
+            font-weight: 500;
+            background: linear-gradient(130deg, $main 0%, $main2 100%);
+            display: inline;
+            padding: 0.2rem 1rem;
+            border-radius: 1rem;
+            font-size: 0.8rem;
+        }
+
+        .info {
+            margin-top: 0.75rem;
+            font-size: 0.85rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+        }
+    }
+
+    .project-container {
+        padding: 4.5rem 12rem 5.5rem;
+
+        &.bg {
+            background: #f1f1f9;
+        }
+
+        .master-wrap {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            margin-top: 3rem;
+        }
+
+        .master {
+            width: 33.33%;
+            text-align: center;
+
+            img {
+                width: 100%;
+                margin-top: -0.5rem;
+
+                &.logo {
+                    width: 7rem;
+                }
+            }
+
+            p {
+                margin-top: -1rem;
+            }
+        }
+
+        p {
+            font-size: 0.75rem;
+            padding: 0 2.5rem;
+            margin-top: 0.5rem;
+        }
+    }
+
+    .project-flex {
+        display: flex;
+
+        .edu {
+            width: 50%;
+            
+            &.pr {
+                padding-right: 1rem;
+            }
+
+            &.pl {
+                padding-left: 1rem;
+            }
+
+            .info {
+                margin-bottom: 2rem;
+            }
+
+            img {
+                width: 100%;
+                border: 1px solid #d9d9d9;
+            }
+        }
+    }
+
+    .project-wrap {
+        padding: 0 5rem;
+
+        img {
+            width: 100%;
         }
     }
 }
