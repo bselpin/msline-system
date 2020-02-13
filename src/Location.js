@@ -75,13 +75,14 @@ class Location extends React.Component {
                         <img src={logoblue} alt="" className="logo-blue" />
                         <p>(주)엠에스라인 시스템</p>                        
                         <p>서울시 강남구 압구정로 79길 41 2층</p>
-                        <p><span className="label">CEO</span> 조광호</p>
+                        <p><span className="label">CEO</span>조광호</p> 
                         <p>
                             <span className="label">T</span><span>02  540  2621</span>
                         </p>
                         <p>
                             <span className="label">F</span><span>070  8277  3310</span>
                         </p>
+                        <p><span className="label">사업자 등록번호</span>212-81-99522</p>
                     </ScrollAnimation>
 
                     <div id="top-btn" className="top-btn tag" onClick={this.toTop}>
