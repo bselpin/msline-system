@@ -1,131 +1,152 @@
-@import 'Variable.scss';
+@import "Variable.scss";
 
 .hyper {
+  height: 30rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+
+  .left,
+  .right {
+    width: 50%;
     height: 30rem;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    z-index: 10;
+  }
 
-    .left,
-    .right {
-        width: 50%;
-        height: 30rem;
+  .left {
+    text-align: left;
+
+    .wrapper {
+      word-break: keep-all;
+      width: 100%;
+      color: #fff;
+      background: $main;
+      padding: 4rem 3rem 3rem 18vw;
     }
 
-    .left {
-        text-align: left;
-
-        .wrapper {
-            word-break: keep-all;
-            width: 100%;
-            color: #fff;
-            background: $main;
-            padding: 4rem 3rem 3rem 18vw;
-        }
-
-        h1,
-        p {
-            text-align: left;
-            width: 100%;
-        }
-
-        h1 {
-            font-size: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        p {
-            font-size: 0.75rem;
-            font-weight: 300;
-            margin-top: 0.5rem;
-        }
-
-        img {
-            width: 5.5rem;
-            margin-top: 4rem;
-            display: inline-block;
-
-            &.ex {
-                margin-left: 1.5rem;
-            }
-        }
+    h1,
+    p {
+      text-align: left;
+      width: 100%;
     }
 
-    .right {
-        background: url('../img/hyper.jpg') -25% bottom no-repeat;
-        background-size: 125%;
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 3rem;
     }
+
+    p {
+      font-size: 0.75rem;
+      font-weight: 300;
+      margin-top: 0.5rem;
+    }
+
+    img {
+      width: 5.5rem;
+      margin-top: 4rem;
+      display: inline-block;
+
+      &.ex {
+        margin-left: 1.5rem;
+      }
+    }
+  }
+
+  .right {
+    background: url("../img/hyper.jpg") -25% bottom no-repeat;
+    background-size: 125%;
+  }
 }
 
 .cards {
-    width: 100%;
-    min-height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-direction: row;
-    padding: 0 calc(200px + 2vw);
-    margin-bottom: 8rem;
-    margin-top: -3rem;
-    position: relative;
-    z-index: 15;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  padding: 0 calc(200px + 2vw);
+  margin-bottom: 8rem;
+  margin-top: -3rem;
+  position: relative;
+  z-index: 15;
 
-    .card {
-        width: 25%;
-        min-width: 250px;
-        text-align: center;
-        margin: 0 2rem;
-        white-space: nowrap;
-        background: #fff;
-        padding: 1.25rem;
-        padding-top: 0.8rem;
-        font-size: 0.6rem;
-        box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
-        height: 15.5rem;
-        margin-top: 2rem;
-        transition: all 0.2s;
-        letter-spacing: -1px;
-        transform: translate(0, 0);
+  .card {
+    width: 23%;
+    min-width: 250px;
+    text-align: center;
+    margin: 0 2rem;
+    white-space: nowrap;
+    background: #fff;
+    padding: 1.25rem;
+    padding-top: 0.8rem;
+    font-size: 0.6rem;
+    box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
+    height: 15.5rem;
+    margin-top: 3rem;
+    transition: all 0.2s;
+    letter-spacing: -1px;
+    transform: translate(0, 0);
 
-        &:hover {
-            transform: translate(-0.2rem, -0.2rem);
-            box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
-        }
-
-        &.card03,
-        &.card04 {
-            width: 26%;
-            height: 17rem;
-            margin-top: 4rem;
-            margin-left: -6rem;
-            margin-right: -6rem;
-        }
-
-        img {
-            width: 4rem;
-            min-width: 150px;
-        }
-
-        h2 {
-            font-size: 0.75rem;
-        }
-
-        h3 {
-            color: $main2;
-            font-size: 0.6rem;
-            font-weight: 700;
-            margin: 0;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0px;
-        }
-
-        p {
-            font-family: 'Noto Sans KR', sans-serif;
-            line-height: 1.8;
-        }
+    &:hover {
+      transform: translate(-0.2rem, -0.2rem);
+      box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
     }
+
+    img {
+      width: 4rem;
+      min-width: 150px;
+    }
+
+    h2 {
+      font-size: 0.75rem;
+    }
+
+    h3 {
+      color: $main2;
+      font-size: 0.6rem;
+      font-weight: 700;
+      margin: 0;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0px;
+    }
+
+    p {
+      font-family: "Noto Sans KR", sans-serif;
+      line-height: 1.8;
+    }
+  }
+}
+
+@include tablet {
+  .hyper {
+    height: auto;
+
+    .left {
+      .wrapper {
+        padding: 3rem 2rem 2rem 10vw;
+      }
+    }
+
+    .right {
+      background: url("../img/hyper.jpg") -5% bottom no-repeat;
+      background-size: 155%;
+    }
+  }
+
+  .cards {
+    padding: 0 calc(100px + 2vw);
+    margin-top: -7rem;
+    margin-bottom: 1rem;
+    .card {
+      width: 23%;
+      min-width: 200px;
+      text-align: center;
+      margin: 0 1.5rem;
+      margin-top: 3rem;
+    }
+  }
 }

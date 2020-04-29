@@ -1,3 +1,69 @@
+.hyper {
+  height: 30rem;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.hyper .left,
+.hyper .right {
+  width: 50%;
+  height: 30rem;
+}
+
+.hyper .left {
+  text-align: left;
+}
+
+.hyper .left .wrapper {
+  word-break: keep-all;
+  width: 100%;
+  color: #fff;
+  background: #0c69f5;
+  padding: 4rem 3rem 3rem 18vw;
+}
+
+.hyper .left h1,
+.hyper .left p {
+  text-align: left;
+  width: 100%;
+}
+
+.hyper .left h1 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.hyper .left p {
+  font-size: 0.75rem;
+  font-weight: 300;
+  margin-top: 0.5rem;
+}
+
+.hyper .left img {
+  width: 5.5rem;
+  margin-top: 4rem;
+  display: inline-block;
+}
+
+.hyper .left img.ex {
+  margin-left: 1.5rem;
+}
+
+.hyper .right {
+  background: url("../img/hyper.jpg") -25% bottom no-repeat;
+  background-size: 125%;
+}
+
 .cards {
   width: 100%;
   min-height: 100vh;
@@ -16,12 +82,15 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  padding: 0 calc(300px + 2vw);
+  padding: 0 calc(200px + 2vw);
   margin-bottom: 8rem;
+  margin-top: -3rem;
+  position: relative;
+  z-index: 15;
 }
 
 .cards .card {
-  width: 24%;
+  width: 23%;
   min-width: 250px;
   text-align: center;
   margin: 0 2rem;
@@ -33,27 +102,23 @@
   -webkit-box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
           box-shadow: 10px 10px 25px rgba(0, 0, 0, 0.2);
   height: 15.5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
   -webkit-transition: all 0.2s;
   transition: all 0.2s;
+  letter-spacing: -1px;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .cards .card:hover {
-  -webkit-transform: translate(-0.25rem, -0.25rem);
-          transform: translate(-0.25rem, -0.25rem);
+  -webkit-transform: translate(-0.2rem, -0.2rem);
+          transform: translate(-0.2rem, -0.2rem);
   -webkit-box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
           box-shadow: 30px 30px 50px rgba(0, 0, 0, 0.15);
 }
 
-.cards .card.card03, .cards .card.card04 {
-  height: 17rem;
-  margin-top: 3rem;
-  margin-left: -3.5rem;
-  margin-right: -3.5rem;
-}
-
 .cards .card img {
-  width: 75%;
+  width: 4rem;
   min-width: 150px;
 }
 
@@ -63,14 +128,40 @@
 
 .cards .card h3 {
   color: #043cd8;
-  font-size: 0.65rem;
-  font-weight: 300;
+  font-size: 0.6rem;
+  font-weight: 700;
   margin: 0;
   margin-bottom: 0.5rem;
+  letter-spacing: 0px;
 }
 
 .cards .card p {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   line-height: 1.8;
+}
+
+@media (min-width: 577px) and (max-width: 1366px) {
+  .hyper {
+    height: auto;
+  }
+  .hyper .left .wrapper {
+    padding: 3rem 2rem 2rem 10vw;
+  }
+  .hyper .right {
+    background: url("../img/hyper.jpg") -5% bottom no-repeat;
+    background-size: 155%;
+  }
+  .cards {
+    padding: 0 calc(100px + 2vw);
+    margin-top: -7rem;
+    margin-bottom: 1rem;
+  }
+  .cards .card {
+    width: 23%;
+    min-width: 200px;
+    text-align: center;
+    margin: 0 1.5rem;
+    margin-top: 3rem;
+  }
 }
 /*# sourceMappingURL=Cards.css.map */

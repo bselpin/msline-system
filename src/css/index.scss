@@ -1,9 +1,9 @@
-@import 'Variable.scss';
-@import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap');
-@import url('https://d24uop4wk69tt0.cloudfront.net/css/SpoqaHanSans-kr.css');
+@import "Variable.scss";
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700&display=swap");
+@import url("https://d24uop4wk69tt0.cloudfront.net/css/SpoqaHanSans-kr.css");
 
 ::selection {
-  background: rgba(30,30,30,0.85);
+  background: rgba(30, 30, 30, 0.85);
   color: #fff;
 }
 
@@ -22,7 +22,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #1649f0;
 }
-
 
 * {
   margin: 0;
@@ -51,10 +50,15 @@ html {
   user-select: none;
 }
 
-
 body {
   margin: 0;
-  font-family: 'Titillium Web', 'Spoqa Han Sans', sans-serif;
+  font-family: "Titillium Web", "Spoqa Han Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@include mobile {
+  html {
+    font-size: calc(15px + 0.4vw);
+  }
 }
