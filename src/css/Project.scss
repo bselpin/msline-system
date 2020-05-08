@@ -106,11 +106,63 @@
 @include tablet {
   #project {
     .project-container {
-      padding: 2.5rem 7rem 4rem;
+      padding: 2.5rem 5rem 4rem;
     }
 
     .project-wrap {
       padding: 0 3rem;
+    }
+  }
+}
+
+@include mobile {
+  #project {
+    .project-container {
+      padding: 2.5rem 5vw 4rem;
+
+      .master-wrap {
+        display: block;
+
+        .master {
+          width: 100%;
+          margin-bottom: 3rem;
+
+          img {
+            width: 65%;
+            display: block;
+            margin: 0 auto 1rem auto;
+
+            &.logo {
+              display: block;
+              width: 8rem;
+            }
+          }
+        }
+      }
+    }
+
+    .project-wrap {
+      padding: 0 1rem;
+      display: block;
+    }
+
+    .project-flex {
+      .edu {
+        width: 100%;
+
+        .info {
+          padding: 0;
+        }
+
+        &.pr {
+          padding: 0;
+        }
+
+        &.pl {
+          padding: 0;
+          margin-top: 3.5rem;
+        }
+      }
     }
   }
 }

@@ -12,7 +12,7 @@ class MainSlider extends React.Component {
       autoplaySpeed: 5000,
       duration: 300,
       swipe: true,
-      slidesToShow: "1",
+      slidesToShow: 1,
     };
 
     return (

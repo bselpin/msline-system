@@ -114,3 +114,25 @@
     width: 68vw;
   }
 }
+
+@include mobile {
+  #location {
+    background: #fbfbff url("../img/cluster.png") bottom right no-repeat;
+    background-size: 70%;
+    padding-bottom: 0;
+  }
+
+  .footer {
+    background: rgba(255, 255, 255, 0.45);
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+
+    .logo-blue {
+      margin: 1.5rem auto;
+    }
+    .top-btn {
+      display: none;
+    }
+  }
+}

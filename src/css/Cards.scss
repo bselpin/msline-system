@@ -150,3 +150,51 @@
     }
   }
 }
+
+@include mobile {
+  .hyper {
+    height: auto;
+
+    .left {
+      width: 100%;
+      height: auto;
+
+      .wrapper {
+        padding: 3rem 2rem 5rem 10vw;
+        height: auto;
+      }
+    }
+
+    .right {
+      display: none;
+      width: 100%;
+      background: url("../img/hyper.jpg") -5% bottom no-repeat;
+      background-size: 155%;
+    }
+  }
+
+  .cards {
+    padding: 0 5vw;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+
+    .card {
+      width: 80%;
+      height: auto;
+      min-width: 200px;
+      padding: 1.5rem;
+
+      h2 {
+        font-size: 0.85rem;
+      }
+
+      h3 {
+        font-size: 0.75rem;
+      }
+
+      p {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

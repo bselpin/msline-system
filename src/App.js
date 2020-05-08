@@ -15,10 +15,6 @@ class App extends React.Component {
     this.project = null;
     this.contact = null;
     this.location = null;
-    this.handleAbout = this.handleAbout.bind(this);
-    this.handleProject = this.handleProject.bind(this);
-    this.handleContact = this.handleContact.bind(this);
-    this.handleLocation = this.handleLocation.bind(this);
   }
 
   state = {
@@ -30,6 +26,7 @@ class App extends React.Component {
     logot: false,
     mains: false,
     isLoading: true,
+    nav: false,
   };
 
   changeStates() {
@@ -63,25 +60,31 @@ class App extends React.Component {
     }, 4500);
   }
 
-  handleAbout(e) {
+  handleAbout = (e) => {
     e.preventDefault();
     this.about.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  };
 
-  handleProject(e) {
+  handleProject = (e) => {
     e.preventDefault();
     this.project.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  };
 
-  handleContact(e) {
+  handleContact = (e) => {
     e.preventDefault();
     this.contact.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  };
 
-  handleLocation(e) {
+  handleLocation = (e) => {
     e.preventDefault();
     this.location.scrollIntoView({ behavior: "smooth", block: "start" });
-  }
+  };
+
+  handleNav = () => {
+    this.setState({
+      nav: !this.state.nav,
+    });
+  };
 
   componentDidMount() {
     this.changeStates();
@@ -136,6 +139,60 @@ class App extends React.Component {
                 </a>
               </li>
             </ul>
+          </nav>
+
+          <nav id="nav-mo" className={`${status.nav ? "active" : ""}`}>
+            <ul>
+              <li>
+                <a
+                  href={"#" + this.about}
+                  onClick={(e) => {
+                    this.handleAbout(e);
+                    this.handleNav();
+                  }}
+                  className="tag"
+                >
+                  about
+                </a>
+              </li>
+              <li>
+                <a
+                  href={"#" + this.project}
+                  onClick={(e) => {
+                    this.handleProject(e);
+                    this.handleNav();
+                  }}
+                  className="tag"
+                >
+                  project
+                </a>
+              </li>
+              <li>
+                <a
+                  href={"#" + this.contact}
+                  onClick={(e) => {
+                    this.handleContact(e);
+                    this.handleNav();
+                  }}
+                  className="tag"
+                >
+                  contact
+                </a>
+              </li>
+              <li>
+                <a
+                  href={"#" + this.location}
+                  onClick={(e) => {
+                    this.handleLocation(e);
+                    this.handleNav();
+                  }}
+                  className="tag"
+                >
+                  company
+                </a>
+              </li>
+            </ul>
+            <div className="close-btn" onClick={this.handleNav}></div>
           </nav>
 
           <header className="App-header">
@@ -254,6 +311,11 @@ class App extends React.Component {
               className={`logot ${status.logot ? "active" : ""}`}
               alt="symbol"
             />
+
+            <div
+              className={`nav-btn ${status.mains ? "active" : ""}`}
+              onClick={this.handleNav}
+            ></div>
 
             <div className={`mains ${status.mains ? "active" : ""}`}>
               <MainSlider />

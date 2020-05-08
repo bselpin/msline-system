@@ -119,13 +119,10 @@
   letter-spacing: 1px;
   font-weight: 500;
   font-family: inherit;
-  position: absolute;
-  bottom: calc(1px - 3rem);
   width: 25%;
   height: 3rem;
-  right: 0;
   font-size: 0.9rem;
-  z-index: 50;
+  margin-top: 1rem;
   color: #fff;
   background: none;
   border: 1px solid rgba(255, 255, 255, 0.25);

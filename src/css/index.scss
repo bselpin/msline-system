@@ -57,8 +57,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+ul,
+li {
+  list-style-type: none;
+}
+
 @include mobile {
   html {
-    font-size: calc(15px + 0.4vw);
+    font-size: calc(16px + 0.45vw);
   }
 }
