@@ -9,6 +9,8 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [page, setPage] = useState("");
   const [text, setText] = useState("");
+  const [done, setDone] = useState(false);
+  const [error, setError] = useState(false);
 
   const updateName = (e) => {
     setName(e.target.value);
@@ -26,23 +28,55 @@ const Contact = () => {
     setText(e.target.value);
   };
 
+  const success = () => {
+    setDone(true);
+    setTimeout(() => {
+      setDone(false);
+    }, 2500);
+  };
+
+  const fail = () => {
+    setError(true);
+    setTimeout(() => {
+      setError(false);
+    }, 2500);
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
-    const data = {
-      name,
-      email,
-      page,
-      text,
+    let fName = encodeURIComponent(name);
+    let fMail = encodeURIComponent(email);
+    let fUrl = encodeURIComponent(page);
+    let fText = encodeURIComponent(text);
+    let myHeaders = new Headers();
+    let formdata = new FormData();
+    formdata.append("name", fName);
+    formdata.append("tel", fMail);
+    formdata.append("refurl", fUrl);
+    formdata.append("content", fText);
+
+    let requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: formdata,
+      redirect: "follow",
     };
-    const config = {
-      headers: {
-        "content-type": "application/x-www-form-urlencoded",
-        "Access-Control-Allow-Origin": "*",
-      },
-    };
-    await axios
-      .post("http://msline.net/index.php/admin", data, config)
-      .then((res) => console.log(res));
+
+    fetch(
+      "http://msline.net/index.php/welcome/sendProjectRequest",
+      requestOptions
+    )
+      .then((response) => response.text())
+      .then((result) => {
+        setName("");
+        setEmail("");
+        setPage("");
+        setText("");
+        success();
+      })
+      .catch((error) => {
+        fail();
+      });
   };
 
   return (
@@ -120,6 +154,12 @@ const Contact = () => {
               <button id="submit-btn" className="submit-btn tag dark">
                 보내기
               </button>
+              <div className={done ? "done-message active" : "done-message"}>
+                성공적으로 발송을 완료하였습니다
+              </div>
+              <div className={error ? "error-message active" : "error-message"}>
+                네트워크 문제가 발생했습니다. 다시 시도해 주세요
+              </div>
             </form>
           </ScrollAnimation>
         </div>

@@ -116,9 +116,29 @@
   transition: all 0.15s ease-out;
 }
 
-@media (min-width: 577px) and (max-width: 1366px) {
+@media (min-width: 900px) and (max-width: 1366px) {
   .map-wrap {
     width: 68vw;
+  }
+}
+
+@media (max-width: 576px) {
+  #location {
+    background: #fbfbff url("../img/cluster.png") bottom right no-repeat;
+    background-size: 70%;
+    padding-bottom: 0;
+  }
+  .footer {
+    background: rgba(255, 255, 255, 0.45);
+    padding-bottom: 2rem;
+    text-align: center;
+    font-size: 0.75rem;
+  }
+  .footer .logo-blue {
+    margin: 1.5rem auto;
+  }
+  .footer .top-btn {
+    display: none;
   }
 }
 /*# sourceMappingURL=Location.css.map */

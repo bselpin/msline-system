@@ -25,7 +25,7 @@ class App extends React.Component {
     logov: false,
     logot: false,
     mains: false,
-    isLoading: true,
+    isLoading: false,
     nav: false,
   };
 

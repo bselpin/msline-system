@@ -127,22 +127,27 @@ nav {
     height: 2rem;
     background: url("../img/close.svg") center center no-repeat;
     z-index: 9999;
-    top: 1rem;
-    right: 1rem;
+    top: 0.5rem;
+    right: 0.5rem;
   }
 }
 
 .nav-btn {
   position: fixed;
   z-index: 9999;
-  top: 1rem;
-  right: 1rem;
-  background: url("../img/nav.svg") center center no-repeat;
-  width: 2rem;
-  height: 2rem;
+  top: 0rem;
+  right: 0rem;
+  background-color: #fff;
+  background-image: url("../img/nav.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 2rem;
+  width: 3rem;
+  height: 3rem;
   opacity: 0;
   transition: all 0.25s;
   display: none;
+  box-shadow: 0 0 15px rgba(20, 50, 80, 0.15);
 
   &.active {
     opacity: 1;
@@ -156,7 +161,7 @@ nav {
   z-index: -1;
   top: 0;
   left: 0;
-  background: url("../img/block-sub.png") -1% 200% no-repeat;
+  background: url("../img/block-sub.jpg") -1% 200% no-repeat;
   background-size: calc(150px + 40vw);
 }
 
@@ -167,7 +172,7 @@ nav {
   z-index: 1;
   top: 0;
   left: 0;
-  background: url("../img/block-b.png") 130% top no-repeat;
+  background: url("../img/block-b.jpg") 130% top no-repeat;
   background-size: calc(150px + 45vw);
   display: flex;
   justify-content: center;
@@ -195,9 +200,9 @@ nav {
 
 #symbol {
   display: none;
-  width: 10vw;
-  top: 0.5rem;
-  left: 0.5rem;
+  width: 2rem;
+  top: 0.3rem;
+  left: 0.2rem;
 }
 
 @include desktop {
@@ -212,12 +217,12 @@ nav {
 
 @include tablet {
   .main-back {
-    background: url("../img/block-b.png") 110% -35% no-repeat;
+    background: url("../img/block-b.jpg") 110% -35% no-repeat;
     background-size: calc(150px + 35vw);
   }
 
   .main-back-sub {
-    background: url("../img/block-sub.png") 5% 175% no-repeat;
+    background: url("../img/block-sub.jpg") 5% 125% no-repeat;
     background-size: calc(150px + 30vw);
   }
 }
@@ -390,12 +395,12 @@ nav {
     margin-top: 1rem;
   }
   .main-back {
-    background: url("../img/block-b.png") 170% 0% no-repeat;
+    background: url("../img/block-b.jpg") 170% 0% no-repeat;
     background-size: calc(150px + 40vw);
   }
 
   .main-back-sub {
-    background: url("../img/block-sub.png") -45% 100% no-repeat;
+    background: url("../img/block-sub.jpg") -45% 100% no-repeat;
     background-size: calc(150px + 35vw);
   }
 

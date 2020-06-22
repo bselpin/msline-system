@@ -127,7 +127,7 @@
 }
 
 .cards .card h3 {
-  color: #043cd8;
+  color: #043dd7;
   font-size: 0.6rem;
   font-weight: 700;
   margin: 0;
@@ -140,7 +140,7 @@
   line-height: 1.8;
 }
 
-@media (min-width: 577px) and (max-width: 1366px) {
+@media (min-width: 900px) and (max-width: 1366px) {
   .hyper {
     height: auto;
   }
@@ -162,6 +162,46 @@
     text-align: center;
     margin: 0 1.5rem;
     margin-top: 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hyper {
+    height: auto;
+  }
+  .hyper .left {
+    width: 100%;
+    height: auto;
+  }
+  .hyper .left .wrapper {
+    padding: 3rem 2rem 5rem 10vw;
+    height: auto;
+  }
+  .hyper .right {
+    display: none;
+    width: 100%;
+    background: url("../img/hyper.jpg") -5% bottom no-repeat;
+    background-size: 155%;
+  }
+  .cards {
+    padding: 0 5vw;
+    margin-top: 0rem;
+    margin-bottom: 1rem;
+  }
+  .cards .card {
+    width: 80%;
+    height: auto;
+    min-width: 200px;
+    padding: 1.5rem;
+  }
+  .cards .card h2 {
+    font-size: 0.85rem;
+  }
+  .cards .card h3 {
+    font-size: 0.75rem;
+  }
+  .cards .card p {
+    font-size: 0.75rem;
   }
 }
 /*# sourceMappingURL=Cards.css.map */

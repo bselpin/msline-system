@@ -15,7 +15,7 @@
 #project .wrapper h3 {
   color: #fff;
   font-weight: 500;
-  background: linear-gradient(130deg, #0c69f5 0%, #043cd8 100%);
+  background: linear-gradient(130deg, #0c69f5 0%, #043dd7 100%);
   display: inline;
   padding: 0.2rem 1rem;
   border-radius: 1rem;
@@ -25,7 +25,7 @@
 #project .wrapper .info {
   margin-top: 0.75rem;
   font-size: 0.85rem;
-  font-weight: 400;
+  font-weight: 300;
   margin-bottom: 2rem;
 }
 
@@ -67,6 +67,7 @@
 
 #project .project-container .master p {
   margin-top: -1rem;
+  font-weight: 300;
 }
 
 #project .project-container p {
@@ -110,12 +111,51 @@
   width: 100%;
 }
 
-@media (min-width: 577px) and (max-width: 1366px) {
+@media (min-width: 900px) and (max-width: 1366px) {
   #project .project-container {
-    padding: 2.5rem 7rem 4rem;
+    padding: 2.5rem 5rem 4rem;
   }
   #project .project-wrap {
     padding: 0 3rem;
+  }
+}
+
+@media (max-width: 576px) {
+  #project .project-container {
+    padding: 2.5rem 5vw 4rem;
+  }
+  #project .project-container .master-wrap {
+    display: block;
+  }
+  #project .project-container .master-wrap .master {
+    width: 100%;
+    margin-bottom: 3rem;
+  }
+  #project .project-container .master-wrap .master img {
+    width: 65%;
+    display: block;
+    margin: 0 auto 1rem auto;
+  }
+  #project .project-container .master-wrap .master img.logo {
+    display: block;
+    width: 8rem;
+  }
+  #project .project-wrap {
+    padding: 0 1rem;
+    display: block;
+  }
+  #project .project-flex .edu {
+    width: 100%;
+  }
+  #project .project-flex .edu .info {
+    padding: 0;
+  }
+  #project .project-flex .edu.pr {
+    padding: 0;
+  }
+  #project .project-flex .edu.pl {
+    padding: 0;
+    margin-top: 3.5rem;
   }
 }
 /*# sourceMappingURL=Project.css.map */
